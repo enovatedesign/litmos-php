@@ -227,6 +227,7 @@ class User
     }
 
     /**
+     * @throws \RuntimeException
      * @return string
      */
     public function toXml()
@@ -328,6 +329,7 @@ class User
 
     /**
      * @param string $first_name
+     * @throws Exception\InvalidArgumentException
      */
     public function setFirstName($first_name)
     {
@@ -339,6 +341,7 @@ class User
                 'The first name specified is too long, maximum 100 characters.'
             );
         }
+
         $this->first_name = $first_name;
     }
 
@@ -522,6 +525,8 @@ class User
                 'The user name specified is too long, maximum 255 characters.'
             );
         }
+
+        $this->user_name = $user_name;
     }
 
     /**

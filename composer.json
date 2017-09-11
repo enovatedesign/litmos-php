@@ -8,6 +8,10 @@
     {
       "name": "Tom Johnell",
       "email": "tjohnell@gmail.com"
+    },
+    {
+      "name": "Mike Pepper",
+      "email": "mike.pepper@enovate.co.uk"
     }
   ],
   "autoload": {
