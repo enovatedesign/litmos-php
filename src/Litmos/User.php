@@ -411,6 +411,11 @@ class User
         return $this->password;
     }
 
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
     /**
      * @return string
      */
