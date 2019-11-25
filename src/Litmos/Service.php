@@ -125,7 +125,8 @@ class Service
             $ch,
             CURLOPT_HTTPHEADER,
             array(
-                "Content-Type: text/xml"
+                "Content-Type: text/xml",
+                "apikey: " . $this->api_key,
             )
         );
         curl_setopt($ch, CURLOPT_USERAGENT, 'Litmos-API/1.0');
@@ -195,11 +196,6 @@ class Service
 
         $base_url = "{$parsed_url['scheme']}://{$parsed_url['host']}{$path}";
 
-        if (!$this->api_key) {
-            throw new Exception\RuntimeException("You must specify an API key.");
-        }
-
-        $query_params['apikey'] = $this->api_key;
         $query_params['source'] = $this->source;
 
         if (!is_null($ps)) {
